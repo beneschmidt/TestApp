@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.testapp"
+    package="mobile.app.dev"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="18" />
+
+    <uses-permission android:name="de.htwds.mada.todo" />
 
     <application
         android:allowBackup="true"
@@ -21,6 +23,25 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <!-- Auslesehilfsfunktion für die Todos -->
+        <activity
+            android:name="mobile.app.dev.ueb07.TodoReaderActivity"
+            android:label="TodoReader"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo" >
+        </activity>
+        <activity
+            android:name="mobile.app.dev.ueb07.TodoUpdaterActivity"
+            android:label="TodoUpdater"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo" >
+        </activity>
+        <activity
+            android:name="mobile.app.dev.ueb07.PriorityUpdaterActivity"
+            android:label="PriorityUpdater"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo" >
         </activity>
     </application>
 

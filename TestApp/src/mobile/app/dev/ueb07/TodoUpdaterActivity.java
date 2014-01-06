@@ -5,12 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import mobile.app.dev.R;
-import mobile.app.dev.ueb06.orm.DatabaseHelper;
-import mobile.app.dev.ueb06.orm.Priority;
-import mobile.app.dev.ueb06.orm.Todo;
-import mobile.app.dev.ueb06.orm.TodoDBHelper;
-import mobile.app.dev.ueb06.view.EmptyException;
-import mobile.app.dev.ueb07.TodoContentProvider.Todos;
+import android.app.Activity;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -23,9 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
-
-public class TodoUpdaterActivity extends OrmLiteBaseActivity<DatabaseHelper> {
+public class TodoUpdaterActivity extends Activity {
 
 	private Todo todo;
 	private long selectedTimeInMillis;
@@ -79,7 +72,7 @@ public class TodoUpdaterActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 		try {
 			String title = ((EditText) findViewById(R.id.todoUpdaterTitle)).getText().toString();
 			if (title == null || title.isEmpty())
-				throw new EmptyException(getString(R.string.EMPTY_TITLE_NOT_POSSIBLE));
+				throw new EmptyException(getString(R.string.empty_title_not_possible));
 			ContentValues values = new ContentValues();
 			values.put(TodoDBHelper.COL_TITLE, title);
 			values.put(TodoDBHelper.COL_DESCRIPTION, ((EditText) findViewById(R.id.todoUpdaterDescription)).getText().toString());
@@ -94,7 +87,7 @@ public class TodoUpdaterActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 
 	public void delete(View view) {
 		if (todo != null) {
-			Log.d("DELETE_PRIORITY", "Loesche Todo " + todo);
+			Log.d("DELETE_TODO", "Loesche Todo " + todo);
 			Uri uri = ContentUris.withAppendedId(Todos.CONTENT_URI, todo.get_id());
 			getContentResolver().delete(uri, null, null);
 			finish();

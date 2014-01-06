@@ -4,12 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import mobile.app.dev.R;
-import mobile.app.dev.ueb06.orm.Priority;
-import mobile.app.dev.ueb06.orm.PriorityDBHelper;
-import mobile.app.dev.ueb06.orm.Todo;
-import mobile.app.dev.ueb06.orm.TodoDBHelper;
-import mobile.app.dev.ueb07.TodoContentProvider.Priorities;
-import mobile.app.dev.ueb07.TodoContentProvider.Todos;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;

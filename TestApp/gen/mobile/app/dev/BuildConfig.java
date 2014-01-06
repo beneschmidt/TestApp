@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package com.example.testapp;
+package mobile.app.dev;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

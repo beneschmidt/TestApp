@@ -3,12 +3,6 @@ package mobile.app.dev.ueb07;
 import java.sql.SQLException;
 
 import mobile.app.dev.R;
-import mobile.app.dev.ueb06.orm.Priority;
-import mobile.app.dev.ueb06.orm.PriorityDBHelper;
-import mobile.app.dev.ueb06.orm.TodoDBHelper;
-import mobile.app.dev.ueb06.view.EmptyException;
-import mobile.app.dev.ueb07.TodoContentProvider.Priorities;
-import mobile.app.dev.ueb07.TodoContentProvider.Todos;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -28,7 +22,7 @@ public class PriorityUpdaterActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_priority_db);
+		setContentView(R.layout.activity_priority_updater);
 
 		int selectedId = getIntent().getExtras().getInt(TodoReaderActivity.PRIORITY_KEY);
 		Cursor cursor = getPriority(selectedId);
@@ -39,7 +33,7 @@ public class PriorityUpdaterActivity extends Activity {
 			priority.set_id(id);
 			priority.setName(name);
 		}
-		((EditText) findViewById(R.id.priority_name)).setText(priority.getName());
+		((EditText) findViewById(R.id.priorityUpdaterName)).setText(priority.getName());
 	}
 
 	private Cursor getPriority(int selectedId) {
@@ -56,9 +50,9 @@ public class PriorityUpdaterActivity extends Activity {
 
 	public void save(View view) {
 		try {
-			String name = ((EditText) findViewById(R.id.priority_name)).getText().toString();
+			String name = ((EditText) findViewById(R.id.priorityUpdaterName)).getText().toString();
 			if (name == null || name.isEmpty())
-				throw new EmptyException(getString(R.string.EMPTY_NAME_NOT_POSSIBLE));
+				throw new EmptyException(getString(R.string.empty_title_not_possible));
 			Uri uri = ContentUris.withAppendedId(Priorities.CONTENT_URI, priority.get_id());
 			ContentValues contentValues = new ContentValues();
 			contentValues.put(PriorityDBHelper.COL_NAME, name);
@@ -81,7 +75,7 @@ public class PriorityUpdaterActivity extends Activity {
 			Log.d("DELETE_PRIORITY", "Loesche Priorität " + priority);
 			finish();
 		} catch (SQLException e) {
-			Toast.makeText(this, R.string.priority_still_existing, Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, R.string.priority_still_used, Toast.LENGTH_SHORT).show();
 		}
 	}
 

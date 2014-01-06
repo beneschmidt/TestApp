@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TodoDBActivity" >
+
+    <TextView
+        android:id="@+id/todoUpdaterTitleLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="Titel"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/todoUpdaterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todoUpdaterTitleLabel"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/todoUpdaterDescriptionLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todoUpdaterTitle"
+        android:paddingTop="10dp"
+        android:text="Beschreibung"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/todoUpdaterDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todoUpdaterDescriptionLabel"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:lines="2" />
+
+    <TextView
+        android:id="@+id/todoUpdaterDateLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/todoUpdaterDescription"
+        android:paddingTop="10dp"
+        android:text="Datum"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/todoChosenDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/todoUpdaterDateLabel"
+        android:paddingTop="10dp"
+        android:paddingLeft="20dp"
+        android:text="aktuelles Datum"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:weightSum="1" >
+
+        <Button
+            android:id="@+id/saveUpdaterTodoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:onClick="save"
+            android:text="Speichern"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/deleteUpdaterTodoButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:onClick="delete"
+            android:text="Löschen"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,9 +1,9 @@
-package mobile.app.dev.ueb07;
+package test.app.dev.ueb07;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import mobile.app.dev.R;
+import test.app.dev.R;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.database.Cursor;

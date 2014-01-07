@@ -1,6 +1,6 @@
-package mobile.app.dev;
+package test.app.dev;
 
-import mobile.app.dev.ueb07.TodoReaderActivity;
+import test.app.dev.ueb07.TodoReaderActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

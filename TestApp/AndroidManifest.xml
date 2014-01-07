@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mobile.app.dev"
+    package="test.app.dev"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -16,7 +16,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="mobile.app.dev.MainActivity"
+            android:name="test.app.dev.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,19 +26,19 @@
         </activity>
         <!-- Auslesehilfsfunktion für die Todos -->
         <activity
-            android:name="mobile.app.dev.ueb07.TodoReaderActivity"
+            android:name="test.app.dev.ueb07.TodoReaderActivity"
             android:label="TodoReader"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo" >
         </activity>
         <activity
-            android:name="mobile.app.dev.ueb07.TodoUpdaterActivity"
+            android:name="test.app.dev.ueb07.TodoUpdaterActivity"
             android:label="TodoUpdater"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo" >
         </activity>
         <activity
-            android:name="mobile.app.dev.ueb07.PriorityUpdaterActivity"
+            android:name="test.app.dev.ueb07.PriorityUpdaterActivity"
             android:label="PriorityUpdater"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Holo" >

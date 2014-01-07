@@ -1,8 +1,8 @@
-package mobile.app.dev.ueb07;
+package test.app.dev.ueb07;
 
 import java.sql.SQLException;
 
-import mobile.app.dev.R;
+import test.app.dev.R;
 import android.app.Activity;
 import android.content.ContentUris;
 import android.content.ContentValues;

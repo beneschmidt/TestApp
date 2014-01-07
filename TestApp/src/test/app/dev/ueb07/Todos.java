@@ -1,4 +1,4 @@
-package mobile.app.dev.ueb07;
+package test.app.dev.ueb07;
 
 import android.content.ContentResolver;
 import android.net.Uri;

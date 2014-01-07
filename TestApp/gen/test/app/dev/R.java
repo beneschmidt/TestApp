@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package mobile.app.dev;
+package test.app.dev;
 
 public final class R {
     public static final class attr {
